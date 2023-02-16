@@ -1,19 +1,35 @@
 package com.br.cars.controllers;
 
+import com.br.cars.models.CarModel;
+import com.br.cars.services.CarService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/carros")
 public class CarController {
 
+    final CarService carService;
+
+    @Autowired
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
+
     @GetMapping
-    public ResponseEntity<Object> getCarsName(){
-        return ResponseEntity.status(HttpStatus.OK).body("Test");
+    public ResponseEntity<Object> getCars(){
+        return ResponseEntity.status(HttpStatus.OK).body(carService.findAllCars());
+    }
+    @GetMapping("/{NomeDoCarro}")
+    public ResponseEntity<Object> getCarsName(@PathVariable String NomeDoCarro){
+        return ResponseEntity.status(HttpStatus.OK).body(carService.findCarByName(NomeDoCarro));
+    }
+
+    @PostMapping
+    public ResponseEntity<Object> addCar(@RequestBody CarModel car){
+        return ResponseEntity.status(HttpStatus.CREATED).body(carService.addCar(car));
     }
 }
