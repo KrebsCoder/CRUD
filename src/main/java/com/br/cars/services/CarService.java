@@ -43,4 +43,13 @@ public class CarService {
         }
         return cars.get();
     }
+
+    @Transactional
+    public void deleteCarByName(String nomeDoCarro) {
+        Optional<CarModel> car = carRepository.findByNome(nomeDoCarro);
+        if (car.isEmpty()){
+            throw new RuntimeException("Car does not exist in the database.");
+        }
+        carRepository.delete(car.get());
+    }
 }
