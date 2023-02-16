@@ -24,12 +24,18 @@ public class CarController {
         return ResponseEntity.status(HttpStatus.OK).body(carService.findAllCars());
     }
     @GetMapping("/{NomeDoCarro}")
-    public ResponseEntity<Object> getCarsName(@PathVariable String NomeDoCarro){
+    public ResponseEntity<Object> getCarByName(@PathVariable String NomeDoCarro){
         return ResponseEntity.status(HttpStatus.OK).body(carService.findCarByName(NomeDoCarro));
     }
 
     @PostMapping
     public ResponseEntity<Object> addCar(@RequestBody CarModel car){
         return ResponseEntity.status(HttpStatus.CREATED).body(carService.addCar(car));
+    }
+
+    @DeleteMapping("/{NomeDoCarro}")
+    public ResponseEntity<Object> deleteCar(@PathVariable String NomeDoCarro){
+        carService.deleteCarByName(NomeDoCarro);
+        return ResponseEntity.status(HttpStatus.OK).body("Car deleted successfully.");
     }
 }
