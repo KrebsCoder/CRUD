@@ -1,6 +1,5 @@
 package com.br.cars.services;
 
-import com.br.cars.CarsApplication;
 import com.br.cars.models.CarModel;
 import com.br.cars.repositories.CarRepository;
 import jakarta.transaction.Transactional;
@@ -51,5 +50,18 @@ public class CarService {
             throw new RuntimeException("Car does not exist in the database.");
         }
         carRepository.delete(car.get());
+    }
+
+    @Transactional
+    public void updateCarByName(String nomeDoCarro, CarModel car) {
+        Optional<CarModel> optionalCar = carRepository.findByNome(nomeDoCarro);
+        if (optionalCar.isEmpty()){
+            throw new RuntimeException("Car does not exist in the database.");
+        }
+        CarModel carToUpdate = new CarModel(optionalCar.get().getId(),
+                car.getNome(),
+                car.getAno(),
+                car.getValorTabelaFipe());
+        carRepository.save(carToUpdate);
     }
 }
