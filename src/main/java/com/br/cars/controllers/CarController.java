@@ -38,4 +38,10 @@ public class CarController {
         carService.deleteCarByName(NomeDoCarro);
         return ResponseEntity.status(HttpStatus.OK).body("Car deleted successfully.");
     }
+
+    @PutMapping("/{NomeDoCarro}")
+    public ResponseEntity<Object> updateCar(@PathVariable String NomeDoCarro, @RequestBody CarModel car){
+        carService.updateCarByName(NomeDoCarro, car);
+        return ResponseEntity.status(HttpStatus.OK).body("Car updated successfully.");
+    }
 }
