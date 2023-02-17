@@ -20,6 +20,13 @@ public class CarModel {
     public CarModel() {
     }
 
+    public CarModel(UUID id, String nome, int ano, double valorTabelaFipe) {
+        this.id = id;
+        this.nome = nome;
+        this.ano = ano;
+        this.valorTabelaFipe = valorTabelaFipe;
+    }
+
     public CarModel(String nome, int ano, double valorTabelaFipe) {
         this.nome = nome;
         this.ano = ano;
