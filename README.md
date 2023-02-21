@@ -40,6 +40,8 @@ Para fazer requisições, você pode utilizar o <a href="https://www.postman.com
 
 ## Métodos	
 
+##### Obs: nos exemplos abaixo, o nome do carro é "gol", mas você pode usar qualquer outro nome.
+
 ### GET	
 Requisitar todos os carros cadastrados:
 ```
