@@ -38,7 +38,7 @@ Após a execução do comando acima, o projeto estará disponível em http://loc
 
 Para fazer requisições, você pode utilizar o <a href="https://www.postman.com/">Postman</a> ou o <a href="https://insomnia.rest/">Insomnia</a>.
 
-### Endpoints
+## Métodos	
 
 ### GET	
 Requisitar todos os carros cadastrados:
