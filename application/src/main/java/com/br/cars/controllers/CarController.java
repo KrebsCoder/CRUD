@@ -30,7 +30,7 @@ public class CarController {
 
     @PostMapping
     public ResponseEntity<Object> addCar(@RequestBody CarModel car){
-        return ResponseEntity.status(HttpStatus.CREATED).body(carService.addCar(car));
+        return ResponseEntity.status(HttpStatus.CREATED).body(carService.createCar(car));
     }
 
     @DeleteMapping("/{NomeDoCarro}")
