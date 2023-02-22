@@ -23,7 +23,7 @@ Esse projeto foi criado com o intuito de aplicar os meus conhecimentos sobre CRU
 ---
 ## Como executar o projeto
 
-Após clonar o projeto, certifique-se de estar na raiz do projeto e execute o seguinte comando:
+Após clonar o projeto, certifique-se de estar na raiz do projeto e execute o seguinte comando em uma <a href="https://www.hostinger.com.br/tutoriais/o-que-e-cli">CLI</a>:
 
 ###### Obs: É necessário ter o docker instalado na sua máquina e ter as portas 8080 e 5432 livres.
 
