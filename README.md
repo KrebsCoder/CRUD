@@ -23,7 +23,16 @@ Esse projeto foi criado com o intuito de aplicar os meus conhecimentos sobre CRU
 ---
 ## Como executar o projeto
 
-Após clonar o projeto, certifique-se de estar na raiz do projeto e execute o seguinte comando em uma <a href="https://www.hostinger.com.br/tutoriais/o-que-e-cli">CLI</a>:
+Após clonar o projeto, certifique-se de estar na raiz do projeto, após isso, crie um arquivo chamado *db.env* e coloque as seguintes informações dentro dele:
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=db
+POSTGRES_PORT=5432
+DATABASE_HOST=database
+```
+
+Depois execute o seguinte comando em uma <a href="https://www.hostinger.com.br/tutoriais/o-que-e-cli">CLI</a>:
 
 ###### Obs: É necessário ter o docker instalado na sua máquina e ter as portas 8080 e 5432 livres.
 
